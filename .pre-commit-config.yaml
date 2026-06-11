@@ -13,11 +13,6 @@ repos:
         additional_dependencies:
           - "github.com/wasilibs/go-shellcheck/cmd/shellcheck@latest"
 
-  - repo: https://github.com/shellcheck-py/shellcheck-py
-    rev: v0.11.0.1
-    hooks:
-      - id: shellcheck
-        args: ["--severity=style"]
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.15.4
