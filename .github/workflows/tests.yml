@@ -1,0 +1,20 @@
+name: Testing example-fastapi-todo-app
+
+on: push
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install poetry
+        run: pipx install poetry
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: 'poetry'
+      - name: Install deps
+        run: poetry install
+      - name: Run lint check
+        run: poetry run pre-commit run --all-files
